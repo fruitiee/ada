@@ -1,0 +1,46 @@
+ 
+n = int(input("Enter the number of elements: ")) 
+A = [] 
+for i in range(n): 
+A.append(int(input("Enter element: "))) 
+while True: 
+print("\n1. Traversal") 
+print("2. Insertion") 
+print("3. Deletion") 
+print("4. Searching") 
+print("5. Updating") 
+print("6. Exit") 
+choice = int(input("Enter your choice: ")) 
+if choice == 1: 
+print("Array:", A) 
+elif choice == 2: 
+pos = int(input("Enter position: ")) 
+value = int(input("Enter value: ")) 
+A.insert(pos, value) 
+print("Array:", A) 
+elif choice == 3: 
+value = int(input("Enter value to delete: ")) 
+if value in A: 
+A.remove(value) 
+print("Array:", A) 
+else: 
+print("Element not found") 
+elif choice == 4: 
+value = int(input("Enter value to search: ")) 
+if value in A: 
+print("Element found at position:", A.index(value)) 
+else: 
+print("Element not found") 
+elif choice == 5: 
+pos = int(input("Enter position: ")) 
+3  
+value = int(input("Enter new value: ")) 
+if 0 <= pos < len(A): 
+A[pos] = value 
+print("Array:", A) 
+else: 
+print("Invalid position") 
+elif choice == 6: 
+break 
+else: 
+print("Invalid choice")
