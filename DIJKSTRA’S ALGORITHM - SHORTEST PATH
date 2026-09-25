@@ -1,0 +1,31 @@
+def dijkstra(graph, source): 
+n = len(graph) 
+distance = [float('inf')] * n 
+visited = [False] * n 
+distance[source] = 0 
+for _ in range(n): 
+minimum = float('inf') 
+u = -1 
+for i in range(n): 
+if not visited[i] and distance[i] < minimum: 
+minimum = distance[i] 
+u = i 
+if u == -1: 
+break 
+visited[u] = True 
+for v in range(n): 
+if graph[u][v] > 0 and not visited[v]: 
+new_distance = distance[u] + graph[u][v] 
+if new_distance < distance[v]: 
+distance[v] = new_distance 
+print("Shortest distances from vertex", source) 
+for i in range(n): 
+print(f"Vertex {i}: {distance[i]}") 
+graph = [ 
+[0, 4, 1, 0, 0], 
+[4, 0, 2, 5, 0], 
+[1, 2, 0, 8, 10], 
+[0, 5, 8, 0, 2], 
+[0, 0, 10, 2, 0] 
+] 
+dijkstra(graph, 0)
