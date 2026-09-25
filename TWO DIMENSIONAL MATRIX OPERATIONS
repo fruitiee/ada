@@ -1,0 +1,51 @@
+rows = int(input("Enter number of rows: ")) 
+cols = int(input("Enter number of columns: ")) 
+print("Enter Matrix A:") 
+A = [] 
+for i in range(rows): 
+row = [] 
+for j in range(cols): 
+row.append(int(input())) 
+A.append(row) 
+print("Enter Matrix B:") 
+B = [] 
+for i in range(rows): 
+row = [] 
+for j in range(cols): 
+row.append(int(input())) 
+B.append(row) 
+def menu(): 
+print("\n----- Matrix Operations ----- ") 
+print("1. Matrix Addition") 
+print("2. Matrix Subtraction") 
+print("3. Transpose of Matrix A") 
+print("4. Exit") 
+choice = int(input("Enter your choice: ")) 
+if choice == 1: 
+print("\nMatrix Addition:") 
+for i in range(rows): 
+for j in range(cols): 
+print(A[i][j] + B[i][j], end=" ") 
+print() 
+menu() 
+elif choice == 2: 
+print("\nMatrix Subtraction:") 
+for i in range(rows): 
+for j in range(cols): 
+8  
+print(A[i][j] - B[i][j], end=" ") 
+print() 
+menu() 
+elif choice == 3: 
+print("\nTranspose of Matrix A:") 
+for j in range(cols): 
+for i in range(rows): 
+print(A[i][j], end=" ") 
+print() 
+menu() 
+elif choice == 4: 
+print("Exiting the program...") 
+else: 
+print("Invalid Choice! Please try again.") 
+menu() 
+menu() 
