@@ -1,0 +1,13 @@
+def reverse_string(text): 
+stack = list(text) 
+reversed_text = "" 
+while stack: 
+reversed_text += stack.pop() 
+return reversed_text 
+text = input("Enter the string: ") 
+reverse = reverse_string(text) 
+print("Reversed string:", reverse) 
+if text == reverse: 
+print("The given string is palindrome") 
+else: 
+print("The given string is not palindrome")
