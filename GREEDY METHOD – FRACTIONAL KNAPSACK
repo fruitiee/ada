@@ -1,0 +1,21 @@
+def fractional_knapsack(weights, values, capacity): 
+items = [] 
+for i in range(len(weights)): 
+items.append((values[i] / weights[i], weights[i], values[i], i)) 
+items.sort(reverse=True) 
+profit = 0 
+for ratio, weight, value, i in items: 
+if capacity >= weight: 
+capacity -= weight 
+profit += value 
+print("Item", i + 1, ": 100% selected") 
+else: 
+fraction = capacity / weight 
+profit += value * fraction 
+print("Item", i + 1, ":", round(fraction * 100, 2), "% selected") 
+break 
+return profit 
+weights = [10, 20, 30] 
+values = [60, 100, 120] 
+capacity = 50 
+print("Maximum Profit:", fractional_knapsack(weights, values, capacity))
